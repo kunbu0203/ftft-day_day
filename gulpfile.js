@@ -28,14 +28,14 @@ let isBuildTask = process.argv.slice(2)[0] == 'build';
 
 // #region Clean(清除所有檔案)
 function clean(cb) {
-    return del(['./public/**'], cb);
+    return del(['./docs/**'], cb);
 };
 // #endregion
 
 // #region Remove(刪除檔案)
 const unlink = (file) => {
     let files = [];
-    let { dir, name, ext } = path.parse(path.resolve('./public/', path.relative(path.resolve('./src/'), file)));
+    let { dir, name, ext } = path.parse(path.resolve('./docs/', path.relative(path.resolve('./src/'), file)));
     if (ext === '.njk') {
         ext = '.html'
     }
@@ -120,7 +120,7 @@ function html(cb) {
                     return '\n<script>\n' + result.code + '\n</script>\n';
                 }));
         }))
-        .pipe(gulp.dest('./public/'));
+        .pipe(gulp.dest('./docs/'));
 };
 // #endregion
 
@@ -139,13 +139,13 @@ function script(cb) {
         .pipe(eslint.failAfterError())
         .pipe(gulpIf(!isBuildTask, sourcemaps.init()))
         .pipe(babel())
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./docs/'))
         .pipe(rename({
             suffix: suffix.min
         }))
         .pipe(uglify())
         .pipe(sourcemaps.write('./', { sourceRoot: '/' }))
-        .pipe(gulp.dest('./public/'));
+        .pipe(gulp.dest('./docs/'));
 };
 // #endregion
 
@@ -162,7 +162,7 @@ function css(cb) {
         .pipe(sourcemaps.init())
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('./', { sourceRoot: '/' }))
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./docs/'))
         .pipe(filter(['**', '!**/*.map']))
         .pipe(cleanCss())
         .pipe(rename({
@@ -173,7 +173,7 @@ function css(cb) {
         //     console.log(file.path)
         //     cb(null, file)
         // }))
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./docs/'))
         .pipe(browserSync.stream());
 };
 
@@ -189,14 +189,14 @@ function scss(cb) {
         .pipe(autoprefixer())
         .pipe(resolveUrl({ debug: true }))
         .pipe(sourcemaps.write('./', { sourceRoot: '/' }))
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./docs/'))
         .pipe(filter(['**', '!**/*.map']))
         .pipe(cleanCss())
         .pipe(rename({
             suffix: suffix.min
         }))
         .pipe(sourcemaps.write('./', { sourceRoot: '/' }))
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./docs/'))
         .pipe(browserSync.stream());
 };
 // #endregion
@@ -218,7 +218,7 @@ function image(cb) {
                 ]
             })
         ], { verbose: true })))
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./docs/'))
         .pipe(browserSync.stream());
 };
 // #endregion
@@ -229,7 +229,7 @@ function plugin(cb) {
         .on('ready', cb)
         .on('unlink', file => unlink(file))
         .on('change', file => browserSync.reload())
-        .pipe(gulp.dest('./public/assets/lib/'));
+        .pipe(gulp.dest('./docs/assets/lib/'));
 };
 // #endregion
 
@@ -245,7 +245,7 @@ function other(cb) {
     return watch(glob, watchParameter)
         .on('ready', cb)
         .on('unlink', file => unlink(file))
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./docs/'))
         .pipe(browserSync.stream());
 };
 // #endregion
@@ -254,7 +254,7 @@ function other(cb) {
 function serve(cb) {
     browserSync.init({
         server: {
-            baseDir: './public/'
+            baseDir: './docs/'
         }
     })
     cb();
