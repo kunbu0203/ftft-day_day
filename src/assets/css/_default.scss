@@ -16,6 +16,10 @@ button {
     cursor: pointer;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301

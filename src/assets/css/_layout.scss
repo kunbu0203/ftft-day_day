@@ -19,8 +19,27 @@ body {
     left: 0;
     box-sizing: border-box;
     width: 100%;
+    padding: 16px 40px;
+    background-color: #FFF;
+    box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.1);
 
-    @include breakpoint-down('tablet') {}
+    &-wrap {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+
+    &-logo {
+        display: block;
+        width: 197px;
+    }
+
+    @include breakpoint-down('tablet') {
+        padding: 22px 30px;
+
+        &-logo {
+            width: 148px;
+        }
+    }
 }
 
 /* ------------------------------- Main ------------------------------- */
