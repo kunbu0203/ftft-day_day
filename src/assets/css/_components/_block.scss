@@ -1,1 +1,124 @@
-.wrap {}
+.block {
+    padding: 60px 40px;
+
+    &-wrap {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+
+    &.-promo {
+        background-color: #003f93;
+    }
+
+    @include breakpoint-down('laptop') {
+        padding: 48px 32px;
+    }
+
+    @include breakpoint-down('tablet') {
+        padding: 30px 20px;
+    }
+}
+
+.promo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-content {
+        flex: 0 1 auto;
+        position: relative;
+        padding: 24px 58px;
+        font-size: 40px;
+        line-height: 1.44;
+        text-align: center;
+        color: #fff;
+
+        p {
+            font-weight: bold;
+            line-height: 1.5;
+            color: #ffe7bb;
+        }
+    }
+
+    &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
+
+    &-corner {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: 6px solid #FFF;
+        opacity: 0.2;
+
+        &.-tl {
+            top: 0;
+            left: 0;
+            border-right: 0;
+            border-bottom: 0;
+        }
+
+        &.-tr {
+            top: 0;
+            right: 0;
+            border-left: 0;
+            border-bottom: 0;
+        }
+
+        &.-br {
+            bottom: 0;
+            right: 0;
+            border-left: 0;
+            border-top: 0;
+        }
+
+        &.-bl {
+            bottom: 0;
+            left: 0;
+            border-right: 0;
+            border-top: 0;
+        }
+    }
+
+    @include breakpoint-down('laptop') {
+        &-content {
+            padding: 20px 46px;
+            font-size: 32px;
+        }
+
+        &-corner {
+            width: 40px;
+            height: 40px;
+            border-width: 5px;
+        }
+    }
+
+    @include breakpoint-down('tablet') {
+        &-content {
+            padding: 24px 30px;
+            font-size: 22px;
+        }
+
+        &-corner {
+            width: 24px;
+            height: 24px;
+            border-width: 4px;
+        }
+    }
+
+    @include breakpoint-down('mobile') {
+        &-content {
+            padding: 24px;
+            font-size: 20px;
+        }
+
+        &-corner {
+            border-width: 3px;
+        }
+    }
+}
