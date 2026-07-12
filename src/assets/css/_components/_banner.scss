@@ -224,8 +224,12 @@ $h: 1080;
 
             &::before {
                 width: vw(406, $w);
-                height: vw(10, $w);
+                height: vw(12, $w);
                 margin: 0 auto vw(20, $w);
+            }
+
+            &>div {
+                padding-left: 0.4em;
             }
         }
 
