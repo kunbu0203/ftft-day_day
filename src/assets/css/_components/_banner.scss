@@ -1,1 +1,277 @@
-.banner {}
+$w: 1920;
+$h: 1080;
+
+// @keyframes float-up {
+//     0% {
+//         transform: translate(0, vw($h, $w));
+//     }
+
+//     100% {
+//         transform: translate(0, vw(-$h, $w));
+//     }
+// }
+
+@keyframes float-up-1 {
+    0% {
+        background-position-y: vw(1282, $w);
+    }
+
+    100% {
+        background-position-y: vw(-1282, $w);
+    }
+}
+
+@keyframes float-up-2 {
+    0% {
+        background-position-y: vw(1080, $w);
+    }
+
+    100% {
+        background-position-y: vw(-1080, $w);
+    }
+}
+
+@keyframes float-up-m {
+    0% {
+        background-position-y: vw(960, 640);
+    }
+
+    100% {
+        background-position-y: vw(-960, 640);
+    }
+}
+
+@keyframes float-up {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, -20%);
+    }
+}
+
+@keyframes float-down {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 20%);
+    }
+}
+
+@keyframes float-down-lg {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 10%);
+    }
+}
+
+.banner {
+    position: relative;
+    height: vw(1080, $w);
+    background: url(./../image/banner/bg.jpg) no-repeat center/cover;
+    overflow: hidden;
+
+    &-bg {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(./../image/banner/days-1.png) repeat-y center/100%;
+            animation: float-up-1 20s linear 0s infinite;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(./../image/banner/days-2.png) repeat-y center/100%;
+            animation: float-up-2 35s linear 0s infinite;
+        }
+    }
+
+    // &-day {
+    //     position: absolute;
+
+    //     &.-d21 {
+    //         top: vw(650, $w);
+    //         left: vw(254, $w);
+    //         width: vw(188, $w);
+    //         // animation: name duration timing-function delay iteration-count direction fill-mode;
+    //         animation: float-up 20s linear 0s infinite;
+    //     }
+
+    //     &.-d211 {
+    //         top: vw(18, $w);
+    //         left: vw(24, $w);
+    //         width: vw(255, $w);
+    //         animation: float-up 15s linear 0s infinite;
+    //     }
+
+    //     &.-d30 {
+    //         top: vw(330, $w);
+    //         left: vw(800, $w);
+    //         width: vw(167, $w);
+    //         animation: float-up 13s linear -5s infinite;
+    //     }
+
+    //     &.-d24 {
+    //         top: vw(764, $w);
+    //         right: vw(32, $w);
+    //         width: vw(146, $w);
+    //         animation: float-up 18s linear 0s infinite;
+    //     }
+
+    //     &.-d15 {
+    //         top: vw(182, $w);
+    //         right: vw(10, $w);
+    //         width: vw(167, $w);
+    //         animation: float-up 15s linear 0s infinite;
+    //     }
+    // }
+
+    &-wrap {
+        position: relative;
+        height: 100%;
+    }
+
+    &-logo {
+        position: absolute;
+        top: vw(260, $w);
+        left: vw(174, $w);
+        width: vw(590, $w);
+        font-size: 0;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &-txt {
+        position: absolute;
+        top: vw(493, $w);
+        left: vw(210, $w);
+        display: inline-block;
+        font-size: vw(50, $w);
+        font-weight: 500;
+        line-height: 1.48;
+        letter-spacing: em(1.5, 50);
+        color: #082652;
+
+        b {
+            color: #bd943e;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: vw(550, $w);
+            height: vw(15, $w);
+            margin-bottom: vw(40, $w);
+            background: url(./../image/banner/line.svg) no-repeat center left/contain;
+        }
+    }
+
+    &-window {
+        position: absolute;
+        top: vw(100, $w);
+        right: vw(275, $w);
+        width: vw(654, $w);
+    }
+
+    @include breakpoint-down('tablet') {
+        $w: 640;
+        height: vw(959, $w);
+        background-image: url(./../image/banner/bg-m.jpg);
+
+        &-bg {
+            &::before {
+                background-image: url(./../image/banner/days-1-m.png);
+                animation: float-up-m 20s linear 0s infinite;
+            }
+
+            &::after {
+                background-image: url(./../image/banner/days-2-m.png);
+                animation: float-up-m 35s linear 0s infinite;
+            }
+        }
+
+        &-logo {
+            top: vw(58, $w);
+            left: 50%;
+            transform: translateX(-50%);
+            width: vw(428, $w);
+        }
+
+        &-txt {
+            top: vw(220, $w);
+            left: 0;
+            width: 100%;
+            font-size: vw(39, $w);
+            text-align: center;
+
+            &::before {
+                width: vw(406, $w);
+                height: vw(10, $w);
+                margin: 0 auto vw(20, $w);
+            }
+        }
+
+        &-window {
+            top: vw(380, $w);
+            right: vw(115, $w);
+            width: vw(414, $w);
+        }
+    }
+}
+
+.window {
+    $w: 654;
+    $h: 787;
+    position: relative;
+
+    &-day {
+        position: absolute;
+        animation: float-up 2s ease-in-out 0s infinite alternate;
+
+        &.-d1 {
+            top: percent(-40, $h);
+            left: percent(-38, $w);
+            width: percent(calc(448 / 1.5), $w);
+            animation-name: float-down-lg;
+        }
+
+        &.-d2 {
+            top: percent(220, $h);
+            right: percent(-114, $w);
+            width: percent(calc(251 / 1.5), $w);
+        }
+
+        &.-d5 {
+            top: percent(540, $h);
+            right: percent(-60, $w);
+            width: percent(calc(354 / 1.5), $w);
+            animation-delay: -1s;
+        }
+
+        &.-d6 {
+            top: percent(676, $h);
+            left: percent(-75, $w);
+            width: percent(calc(260 / 1.5), $w);
+            animation-name: float-down;
+            animation-delay: -1s;
+        }
+    }
+}

@@ -1,6 +1,34 @@
 {% extends './_layouts/_layout.tmpl' %}
+{% import './_macros/logo.part' as logo %}
 
 {% block content %}
+<section class="banner">
+    <div class="banner-bg">
+        {# <img class="banner-day -d21" src="./assets/image/banner/21.png" alt="">
+        <img class="banner-day -d211" src="./assets/image/banner/21-1.png" alt="">
+        <img class="banner-day -d30" src="./assets/image/banner/30.png" alt="">
+        <img class="banner-day -d24" src="./assets/image/banner/24.png" alt="">
+        <img class="banner-day -d15" src="./assets/image/banner/15.png" alt=""> #}
+    </div>
+    <div class="banner-wrap">
+        <div class="banner-logo">
+            {{ logo.html() }}
+        </div>
+        <div class="banner-txt">
+            讓投資變成一種「習慣」<br>
+            <b>換未來的一個可能！</b>
+        </div>
+        <div class="banner-window">
+            <div class="window">
+                <img src="./assets/image/banner/window.png" alt="">
+                <img class="window-day -d1" src="./assets/image/banner/1.png" alt="">
+                <img class="window-day -d2" src="./assets/image/banner/2.png" alt="">
+                <img class="window-day -d5" src="./assets/image/banner/5.png" alt="">
+                <img class="window-day -d6" src="./assets/image/banner/6.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
 <section class="block -promo">
     <div class="block-wrap">
         <div class="promo">

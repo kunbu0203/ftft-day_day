@@ -1,0 +1,34 @@
+{% macro html(color = '#093F8E') %}
+<svg width="510" height="156" viewBox="0 0 510 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_2361_160)">
+        <path d="M413.46 28.38H355.79V46.13H413.46V28.38Z" fill="{{color}}" />
+        <path d="M376.51 155.11H357.92V137.36H376.51C376.63 137.36 376.73 137.26 376.73 137.15V0H394.48V137.15C394.48 147.05 386.42 155.11 376.52 155.11H376.51Z" fill="{{color}}" />
+        <path d="M411.884 72.404L352.724 88.9108L357.494 106.008L416.654 89.501L411.884 72.404Z" fill="{{color}}" />
+        <path
+            d="M482.04 61.91L472.99 70.96V39.79C472.99 35.58 469.57 32.16 465.36 32.16H443.08C438.87 32.16 435.45 35.58 435.45 39.79V130.06C435.45 134.27 438.87 137.69 443.08 137.69H465.36C469.57 137.69 472.99 134.27 472.99 130.06V96.06L482.04 87.01L490.74 95.71V130.06C490.74 144.05 479.36 155.44 465.36 155.44H443.08C429.09 155.44 417.7 144.06 417.7 130.06V39.79C417.7 25.8 429.08 14.41 443.08 14.41H465.36C479.35 14.41 490.74 25.79 490.74 39.79V70.61L482.04 61.91Z"
+            fill="{{color}}" />
+        <path d="M482.04 69.2L454.58 96.66L467.13 109.22L482.04 94.3L496.96 109.22L509.51 96.66L482.04 69.2Z" fill="url(#paint0_linear_2361_160)" />
+        <path d="M312.72 155.66H196.7V10.03H312.72V155.67V155.66ZM214.46 137.91H294.98V27.78H214.46V137.92V137.91Z" fill="{{color}}" />
+        <path d="M294.94 53.8301L252.83 86.2201L234.1 66.8001L163.86 115.43L173.97 130.02L231.8 89.9801L251.07 109.97L294.94 76.2201V53.8301Z" fill="url(#paint1_linear_2361_160)" />
+        <path d="M148.86 155.66H32.84V10.03H148.86V155.67V155.66ZM50.59 137.91H131.11V27.78H50.59V137.92V137.91Z" fill="{{color}}" />
+        <path d="M131.08 53.8301L88.96 86.2201L70.24 66.8001L0 115.43L10.1 130.02L67.93 89.9801L87.2 109.97L131.08 76.2201V53.8301Z" fill="url(#paint2_linear_2361_160)" />
+    </g>
+    <defs>
+        <linearGradient id="paint0_linear_2361_160" x1="482.51" y1="120.91" x2="481.66" y2="76.86" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#9F8438" />
+            <stop offset="1" stop-color="#D1A964" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_2361_160" x1="309.68" y1="50.5401" x2="119.37" y2="157.89" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#9F8438" />
+            <stop offset="1" stop-color="#D1A964" />
+        </linearGradient>
+        <linearGradient id="paint2_linear_2361_160" x1="145.82" y1="50.5401" x2="-44.5" y2="157.89" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#9F8438" />
+            <stop offset="1" stop-color="#D1A964" />
+        </linearGradient>
+        <clipPath id="clip0_2361_160">
+            <rect width="509.51" height="155.66" fill="white" />
+        </clipPath>
+    </defs>
+</svg>
+{% endmacro %}
