@@ -191,7 +191,7 @@ $h: 1080;
         width: vw(654, $w);
     }
 
-    @include breakpoint-down('tablet') {
+    @include breakpoint-down('mobile') {
         $w: 640;
         height: vw(959, $w);
         background-image: url(./../image/banner/bg-m.jpg);
