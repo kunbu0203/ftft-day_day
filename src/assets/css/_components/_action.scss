@@ -14,6 +14,7 @@
     border-radius: 12px;
     background-color: #003f93;
     text-decoration: none;
+    transition: .3s;
 
     span {
         flex: 0 0 auto;
@@ -30,13 +31,14 @@
     }
 
     img {
-        transition: .3s;
+        // transition: .3s;
     }
 
     &:hover {
-        img {
-            transform: translateX(100%);
-        }
+        background-color: #ea5202;
+        // img {
+        //     transform: translateX(100%);
+        // }
     }
 
     @include breakpoint-down('laptop') {

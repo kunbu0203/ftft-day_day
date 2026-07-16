@@ -191,6 +191,20 @@ $h: 1080;
         width: vw(654, $w);
     }
 
+    &-content {
+        transform: translateX(-10vw);
+        opacity: 0;
+        transition: 1s;
+    }
+
+    &.-enter & {
+
+        &-content {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
     @include breakpoint-down('mobile') {
         $w: 640;
         height: vw(959, $w);
@@ -237,6 +251,20 @@ $h: 1080;
             top: vw(380, $w);
             right: vw(115, $w);
             width: vw(414, $w);
+        }
+
+        &-content {
+            transform: translateY(10vw);
+            opacity: 0;
+            transition: 1s;
+        }
+
+        &.-enter & {
+
+            &-content {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     }
 }
