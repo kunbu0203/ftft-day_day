@@ -81,12 +81,18 @@
     }
 
     &.-fund {
-        background-color: #033c94;
+        background: #033c94 url(./../image/fund/bg.png) no-repeat bottom -40px right/1920px;
     }
 
     &.-fund & {
         &-tit {
             color: #FFF;
+        }
+    }
+
+    @media only screen and (min-width: 1921px) {
+        &.-fund {
+            background-size: 100%;
         }
     }
 
@@ -126,6 +132,10 @@
                 margin-top: 10px;
             }
         }
+
+        &.-fund {
+            background-size: 1380px;
+        }
     }
 
     @include breakpoint-down('tablet') {
@@ -159,6 +169,10 @@
             .-xl {
                 font-size: 48px;
             }
+        }
+
+        &.-fund {
+            background-size: 1024px;
         }
     }
 
@@ -194,6 +208,10 @@
 
         &.-intro {
             background: #FFF;
+        }
+
+        &.-fund {
+            background: #033c94 url(./../image/fund/bg-mb.png) no-repeat bottom -34px center/100%;
         }
     }
 }
