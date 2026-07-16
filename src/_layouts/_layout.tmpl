@@ -34,14 +34,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     {% block styles %}{% endblock %}
     <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NFX5WB');
+    </script>
+    <!-- End Google Tag Manager -->
+    {# <script>
+        new WOW().init();
+    </script> #}
 </head>
 
 <body>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFX5WB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <div class="container">
         <header class="header">
             <div class="header-wrap">
                 <a href="https://www.ftft.com.tw/" class="header-logo" target="_blank" rel="noopener noreferrer" title="富蘭克林華美投信">
-                    <img src="{{ '/assets/image/layout/logo.svg' | relativePath }}" alt="富蘭克林華美投信" >
+                    <img src="{{ '/assets/image/layout/logo.svg' | relativePath }}" alt="富蘭克林華美投信">
                 </a>
             </div>
         </header>
@@ -53,7 +77,9 @@
                 <div class="footer-wrap">
                     <div class="footer-info">
                         <div class="footer-logo">
-                            <img src="{{ '/assets/image/layout/logo.svg' | relativePath }}" alt="富蘭克林華美投信 Logo">
+                            <a href="https://www.ftft.com.tw/" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ '/assets/image/layout/logo.svg' | relativePath }}" alt="富蘭克林華美投信 Logo">
+                            </a>
                             <p>111金管 投信新字第006號</p>
                         </div>
                         <div class="footer-txt">
