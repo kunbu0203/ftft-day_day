@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        {% block title %}{% endblock %}
+        {% block title %}富蘭克林華美{% endblock %}
     </title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    {# <meta name="keywords" content="">
+    <meta name="description" content=""> #}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
 
-    <meta property="og:title" content="">
+    {# <meta property="og:title" content="">
     <meta property="og:site_name" content="">
     <meta property="og:url" content="">
     <meta property="og:description" content="">
@@ -20,7 +20,7 @@
     <link rel="image_src" href="/assets/image/share-img.jpg">
     <meta property="og:image" content="/assets/image/share-img.jpg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="628">
+    <meta property="og:image:height" content="628"> #}
 
     <link rel="manifest" href="{{ '/site.json' | relativePath }}" crossorigin="use-credentials">
     <link rel="shortcut icon" href="{{ '/favicon.ico' | relativePath }}" />
@@ -34,16 +34,82 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
     {% block styles %}{% endblock %}
     <meta name="theme-color" content="#ffffff">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NFX5WB');
+    </script>
+    <!-- End Google Tag Manager -->
+    {# <script>
+        new WOW().init();
+    </script> #}
 </head>
 
 <body>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NFX5WB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <div class="container">
         <header class="header">
+            <div class="header-wrap">
+                <a href="https://www.ftft.com.tw/" class="header-logo" target="_blank" rel="noopener noreferrer" title="富蘭克林華美投信">
+                    <img src="{{ '/assets/image/layout/logo.svg' | relativePath }}" alt="富蘭克林華美投信">
+                </a>
+            </div>
         </header>
         <main class="main">
             {% block content %}{% endblock %}
         </main>
         <footer class="footer">
+            <div class="footer-main">
+                <div class="footer-wrap">
+                    <div class="footer-info">
+                        <div class="footer-logo">
+                            <a href="https://www.ftft.com.tw/" target="_blank" rel="noopener noreferrer">
+                                <img src="{{ '/assets/image/layout/logo.svg' | relativePath }}" alt="富蘭克林華美投信 Logo">
+                            </a>
+                            <p>111金管 投信新字第006號</p>
+                        </div>
+                        <div class="footer-txt">
+                            <h4>富蘭克林華美證券投資信託股份有限公司</h4>
+                            <p>106台北市大安區忠孝東路四段87號12樓</p>
+                            <p>電話：(02)2781-9599　傳真：(02)2781-8299</p>
+                        </div>
+                    </div>
+                    <div class="footer-tel">
+                        <span>基金專線</span>
+                        <a href="#">0800-088-899</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-notice">
+                <div class="footer-wrap">
+                    【富蘭克林華美投信獨立經營管理】<br>
+                    <ul>
+                        <li>上開基金經金融監督管理委員會核准或同意生效，惟不表示本基金絕無風險，本證券投資信託事業以往之經理績效不保證基金之最低投資收益；本證券投資信託事業除盡善良管理人之注意義務外，不負責基金之盈虧，亦不保證最低之收益，投資人申購前應詳閱基金之公開說明書。</li>
+                        <li>本文提及之經濟走勢預測不必然代表上開基金之績效，上開基金投資風險請詳閱基金公開說明書。上開基金不受存款保險、保險安定基金或其他相關保障機制之保障。故投資上開基金可能發生部分或全部本金之損失，最大可能損失則為全部投資金額。</li>
+                        <li>有關基金應負擔之費用已揭露於基金之公開說明書或投資人須知中，投資人可至公開資訊觀測站中查詢。</li>
+                        <li>投資人申購上開基金係持有基金受益憑證，而非本文提及之投資資產或標的。</li>
+                        <li class="-ogT">由於非投資等級債券之信用評等未達投資等級或未經信用評等，且對利率變動的敏感度甚高，故本基金可能會因利率上升、市場流動性下降，或債券發行機構違約不支付本金、利息或破產而蒙受虧損。本基金不適合無法承擔相關風險之投資人。投資人投資非投資等級債券基金不宜占其投資組合過高之比重，投資人應審慎評估。</li>
+                        <li class="-ogT">本基金可投資於美國 Rule 144A債券，該債券屬私募性質，較可能發生流動性不足，財務訊息揭露不完整或因價格不透明導致波動性較大之風險，本基金可投資 Rule 144A債券之比重限制及相關風險請詳閱基金公開說明書。</li>
+                        <li class="-ogT">投資非投資等級債券為訴求之基金，風險及波動度較高，適合能承受較高風險之非保守型投資人。</li>
+                        <li class="-ogT">基金的配息可能由基金的收益或本金中支付。任何涉及由本金支出的部份，可能導致原始投資金額減損。</li>
+                        <li>金融消費爭議處理及申訴管道：就本公司所提供之金融商品或服務所生紛爭，投資人應 先向本公司提出申訴，若三十日內未獲回覆或投資人不滿意處理結果得於六十日內向「金融消費評議中心」申請評議。</li>
+                    </ul>
+                </div>
+            </div>
         </footer>
     </div>
     {% block popups %}{% endblock %}

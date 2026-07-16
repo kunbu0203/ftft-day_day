@@ -19,15 +19,232 @@ body {
     left: 0;
     box-sizing: border-box;
     width: 100%;
+    padding: 16px 40px;
+    background-color: #FFF;
+    box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.1);
+    z-index: 999;
 
-    @include breakpoint-down('tablet') {}
+    &-wrap {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+
+    &-logo {
+        display: block;
+        width: 197px;
+    }
+
+    @include breakpoint-down('tablet') {
+        padding: 12px 20px;
+
+        &-logo {
+            width: 148px;
+        }
+    }
 }
 
 /* ------------------------------- Main ------------------------------- */
-.main {}
+.main {
+    padding-top: 76px;
+
+    @include breakpoint-down('tablet') {
+        padding-top: 57px;
+    }
+}
 
 /* ------------------------------- Footer ------------------------------- */
-.footer {}
+.footer {
+    &-main {
+        padding: 40px;
+        background-color: #FFF;
+    }
+
+    &-main &-wrap {
+        display: flex;
+        align-items: center;
+        max-width: 1330px;
+        margin: 0 auto;
+    }
+
+    &-info {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    &-logo {
+        flex: 0 0 auto;
+        width: 194px;
+
+        a {
+            display: block;
+        }
+
+        p {
+            margin-top: 6px;
+            text-align: justify;
+            text-align-last: justify;
+            color: #3a3a3a;
+        }
+    }
+
+    &-txt {
+        margin-left: 32px;
+        padding-left: 32px;
+        border-left: 1px solid #929292;
+
+        h4 {
+            margin-bottom: 4px;
+            font-size: 22px;
+            color: #073d85;
+        }
+
+        p {
+            font-size: 14px;
+            color: #0f172a;
+        }
+    }
+
+    &-tel {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 26px;
+        font-weight: bold;
+        color: #5f5f5f;
+
+        span {
+            flex: 0 0 auto;
+        }
+
+        a {
+            flex: 0 0 auto;
+            padding-bottom: 0.1em;
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1;
+            color: #ea5303;
+            text-decoration: none;
+        }
+    }
+
+    &-notice {
+        padding: 42px 40px 84px;
+        font-size: 22px;
+        background-color: #f0f0f0;
+    }
+
+    &-notice &-wrap {
+        max-width: 1500px;
+        margin: 0 auto;
+        color: #262626;
+    }
+
+    @include breakpoint-down('laptop') {
+        &-logo {
+            width: 172px;
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        &-txt {
+            padding-left: 0;
+            border-left: none;
+
+            h4 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        &-tel {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0;
+            font-size: 20px;
+
+            a {
+                font-size: 42px;
+            }
+        }
+
+        &-notice {
+            font-size: 18px;
+        }
+    }
+
+    @include breakpoint-down('tablet') {
+        &-main {
+            padding: 24px 20px;
+        }
+
+        &-logo {
+            width: 156px;
+
+            p {
+                font-size: 13px;
+            }
+        }
+
+        &-txt {
+            margin-left: 24px;
+
+            h4 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+        &-tel {
+            font-size: 18px;
+
+            a {
+                font-size: 32px;
+            }
+        }
+
+        &-notice {
+            padding: 24px 20px 40px;
+            font-size: 16px;
+        }
+    }
+
+    @include breakpoint-down('mobile') {
+        &-main &-wrap {
+            flex-direction: column;
+            gap: 16px 0;
+        }
+
+        &-info {
+            flex-direction: column;
+            gap: 16px 0;
+        }
+
+        &-txt {
+            margin-left: 0;
+            text-align: center;
+
+            h4 {
+                margin-bottom: 2px;
+            }
+        }
+
+        &-tel {
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+        }
+    }
+}
 
 /* ------------------------------- Floating tool ------------------------------- */
 .gotop {

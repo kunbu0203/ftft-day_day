@@ -6,10 +6,13 @@
     @return calc($item / $wrap) * 1em;
 }
 
-@function vwPc($item, $wrap: 1920) {
+@function vw($item, $wrap: 1920) {
     @return calc($item / $wrap) * 100vw;
 }
 
-@function vwMb($item, $wrap: 375) {
-    @return calc($item / $wrap) * 100vw;
+$design-width: 640;
+$target-width: 390;
+
+@function mb($num) {
+    @return calc($num * ($target-width / $design-width)) * 1px;
 }

@@ -35,3 +35,9 @@
 .-hidden {
     display: none !important;
 }
+
+.-lgpc {
+    @include breakpoint-down('laptop') {
+        display: none !important;
+    }
+}
