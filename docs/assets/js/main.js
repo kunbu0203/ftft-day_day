@@ -11,4 +11,20 @@
     var vh = window.innerHeight * 0.01;
     $('html').css('--vh', vh + 'px');
   }).trigger('resize.vh');
+
+  // window.addEventListener('load', () => {
+  //     $('.banner').addClass('-enter');
+  // });
+  $(window).on('load', function () {
+    $('.banner').addClass('-enter');
+  });
+  $(window).on('scroll.enter', function () {
+    var windowScrollTop = $(window).scrollTop() + $(window).outerHeight() * 0.55;
+    $('.block').each((i, el) => {
+      var targetOffsetTop = $(el).offset().top;
+      if (windowScrollTop > targetOffsetTop) {
+        $(el).addClass('-enter');
+      }
+    });
+  }).trigger('scroll.enter');
 })();
