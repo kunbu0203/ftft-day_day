@@ -21,10 +21,13 @@
     });
 
     $(window).on('scroll.enter', function () {
-        var windowScrollTop = $(window).scrollTop() + $(window).outerHeight() * 0.55;
+        var windowScrollTop = $(window).scrollTop() + $(window).outerHeight() * 0.6;
 
         $('.block').each((i, el) => {
             var targetOffsetTop = $(el).offset().top;
+            if ($(el).hasClass('-lateIn')) {
+                windowScrollTop = $(window).scrollTop() + $(window).outerHeight() * 0.45;
+            }
 
             if (windowScrollTop > targetOffsetTop) {
                 $(el).addClass('-enter');
