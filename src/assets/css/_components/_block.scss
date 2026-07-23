@@ -1000,23 +1000,42 @@
             display: block;
             height: 7px;
             margin-bottom: 7px;
-            border: 1px solid #BFBFBF;
-            border-right: none;
-            border-bottom: none;
+            border-top: 1px solid #BFBFBF;
+            // border-right: none;
+            // border-bottom: none;
         }
 
         &>div {
             display: flex;
+            // justify-content: space-between;
             font-size: 20px;
             line-height: 1.15;
             color: #4D4D4D;
 
             &>div {
+                // flex: 0 0 auto;
                 flex: 1;
 
+                &:last-child {
+                    flex: 0 0 auto;
+                    width: em(64, 20);
+                }
+
                 span {
+                    position: relative;
                     display: inline-block;
                     transform: translateX(-50%);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: calc(100% + 7px);
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 1px;
+                        height: 8px;
+                        background-color: #BFBFBF;
+                    }
                 }
             }
         }
@@ -1026,26 +1045,29 @@
         position: absolute;
         text-align: center;
 
-        &.-d20220104 {
-            top: percent(29, 658);
-            left: percent(167, 1310);
+        &.-m1 {
+            top: percent(32, 658);
+            left: percent(295, 1310);
         }
 
-        &.-d20230306 {
-            top: percent(197, 658);
-            left: percent(575, 1310);
+        &.-m6 {
+            top: percent(124, 658);
+            left: percent(500, 1310);
         }
 
-        &.-d20240215 {
-            top: percent(366, 658);
-            right: percent(18, 1310);
+        &.-y1 {
+            top: percent(404, 658);
+            left: percent(784, 1310);
         }
 
-        &.-d20240215 {
-            &.-bu {
-                top: 0;
-                // right: percent(18, 1310);
-            }
+        &.-y2 {
+            top: percent(196, 658);
+            left: percent(1278, 1310);
+            // right: percent(-170, 1310);
+            // &.-bu {
+            //     top: 0;
+            //     // right: percent(18, 1310);
+            // }
         }
 
         p {
@@ -1062,22 +1084,52 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         gap: 6px;
-        width: 140px;
+        width: 192px;
         height: 128px;
         margin: 0 auto;
-        padding-bottom: 13px;
+        padding-left: 9px;
+        padding-bottom: 15px;
         background: url(../../image/chart/tooltip-og.svg) no-repeat center/contain;
+        transform: translateX(-50%);
         transition: 0.5s;
         transform-origin: bottom center;
         transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
 
         .-top & {
             padding-bottom: 0;
-            padding-top: 13px;
+            padding-top: 15px;
             background-image: url(./../image/chart/tooltip-og-top.svg);
             transform-origin: top center;
+        }
+
+        .-left & {
+            transform: translateX(-15%);
+            background-image: url(./../image/chart/tooltip-og-left.svg);
+            transform-origin: bottom left;
+
+            &:hover {
+                transform: translateX(-15%) scale(1.1);
+
+                &+p {
+                    transform: translateY(50%);
+                }
+            }
+        }
+
+        .-right & {
+            transform: translateX(-80%);
+            background-image: url(./../image/chart/tooltip-og-right.svg);
+            transform-origin: bottom right;
+
+            &:hover {
+                transform: translateX(-80%) scale(1.1);
+
+                &+p {
+                    transform: translateY(50%);
+                }
+            }
         }
 
         .-bu & {
@@ -1087,18 +1139,19 @@
         &>div {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            font-size: 17px;
+            // align-items: center;
+            font-size: 15px;
             line-height: 1.3;
             color: #303030;
+            text-align: left;
         }
 
         span {
-            padding: 0 5px;
-            font-size: 15px;
+            padding: 1px 6px;
+            // font-size: 15px;
             line-height: 1.2;
             color: #FFF;
-            border-radius: 10px;
+            border-radius: 12px;
             background-color: #EA5404;
 
             .-bu & {
@@ -1107,7 +1160,7 @@
         }
 
         &:hover {
-            transform: scale(1.1);
+            transform: translateX(-50%) scale(1.1);
 
             &+p {
                 transform: translateY(50%);
@@ -1137,15 +1190,19 @@
         transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
         transform-origin: bottom center;
 
-        &.-d20220104 {
-            transition-delay: .3s;
+        &.-m1 {
+            transition-delay: 0.3s;
         }
 
-        &.-d20230306 {
-            transition-delay: 0.8s;
+        &.-m6 {
+            transition-delay: 0.6s;
         }
 
-        &.-d20240215 {
+        &.-y1 {
+            transition-delay: 1.2s;
+        }
+
+        &.-y2 {
             transition-delay: 1.9s;
         }
 
@@ -1197,6 +1254,15 @@
 
             &>div {
                 font-size: 16px;
+
+                &>div {
+                    span {
+                        &::after {
+                            bottom: calc(100% + 6px);
+                            height: 7px;
+                        }
+                    }
+                }
             }
         }
 
@@ -1209,8 +1275,9 @@
 
         &-dialog {
             gap: 5px;
-            width: 112px;
+            width: 154px;
             height: 102px;
+            padding-left: 7px;
             padding-bottom: 10px;
 
             .-top & {
@@ -1218,12 +1285,12 @@
             }
 
             &>div {
-                font-size: 14px;
+                font-size: 12px;
             }
 
             span {
-                padding: 0 4px;
-                font-size: 13px;
+                padding: 1px 4px;
+                // font-size: 13px;
             }
         }
 
@@ -1234,25 +1301,52 @@
     }
 
     @include breakpoint-down('tablet') {
-        &-tooltip {
-            &.-d20240215 {
-                right: 0;
+        // &-main {
+        //     padding-right: 6%;
+        // }
+
+        &-y {
+            width: 50px;
+        }
+
+        &-x {
+            padding-left: 50px;
+        }
+
+        &-dialog {
+            gap: 4px;
+            width: 140px;
+            height: 93px;
+            padding-left: 5px;
+            padding-bottom: 9px;
+
+            .-top & {
+                padding-top: 9px;
+            }
+
+            &>div {
+                font-size: 11px;
+            }
+
+            span {
+                padding: 1px 4px;
             }
         }
     }
 
     @include breakpoint-down('mobile') {
-        max-width: 480px;
+        // max-width: 480px;
+        margin: 0 0 0 -10px;
 
         &-main {
             height: 398px;
         }
 
         &-y {
-            gap: 30px;
-            width: 42px;
-            padding-top: 30px;
-            font-size: 12px;
+            gap: 32px;
+            width: 36px;
+            padding-top: 32px;
+            font-size: 9px;
         }
 
         &-canvas {
@@ -1265,12 +1359,12 @@
             }
         }
 
-        &-line {
-            padding-right: 20px;
-        }
+        // &-line {
+        //     padding-right: 20px;
+        // }
 
         &-x {
-            padding-left: 42px;
+            padding-left: 36px;
 
             &::before {
                 height: 4px;
@@ -1278,7 +1372,22 @@
             }
 
             &>div {
-                font-size: 12px;
+                font-size: 9px;
+
+                &>div {
+                    &:last-child {
+                        width: 2em;
+                    }
+
+                    span {
+                        // max-width: 20px;
+
+                        &::after {
+                            bottom: calc(100% + 4px);
+                            height: 5px;
+                        }
+                    }
+                }
             }
         }
 
@@ -1289,9 +1398,10 @@
         }
 
         &-dialog {
-            gap: 4px;
-            width: 86px;
-            height: 78px;
+            gap: 3px;
+            width: 104px;
+            height: 70px;
+            padding-left: 5px;
             padding-bottom: 8px;
 
             .-top & {
@@ -1299,12 +1409,12 @@
             }
 
             &>div {
-                font-size: 11px;
+                font-size: 8px;
             }
 
             span {
-                padding: 0 3px;
-                font-size: 10px;
+                // padding: 1px 3px;
+                // font-size: 10px;
             }
         }
 
