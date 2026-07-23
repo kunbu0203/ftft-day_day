@@ -1671,9 +1671,7 @@ body {
   display: block;
   height: 7px;
   margin-bottom: 7px;
-  border: 1px solid #BFBFBF;
-  border-right: none;
-  border-bottom: none;
+  border-top: 1px solid #BFBFBF;
 }
 
 .chart-x > div {
@@ -1687,9 +1685,26 @@ body {
   flex: 1;
 }
 
+.chart-x > div > div:last-child {
+  flex: 0 0 auto;
+  width: 3.2em;
+}
+
 .chart-x > div > div span {
+  position: relative;
   display: inline-block;
   transform: translateX(-50%);
+}
+
+.chart-x > div > div span::after {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 8px;
+  background-color: #BFBFBF;
 }
 
 .chart-tooltip {
@@ -1697,23 +1712,24 @@ body {
   text-align: center;
 }
 
-.chart-tooltip.-d20220104 {
-  top: 4.4072948328%;
-  left: 12.7480916031%;
+.chart-tooltip.-m1 {
+  top: 4.8632218845%;
+  left: 22.5190839695%;
 }
 
-.chart-tooltip.-d20230306 {
-  top: 29.9392097264%;
-  left: 43.893129771%;
+.chart-tooltip.-m6 {
+  top: 18.8449848024%;
+  left: 38.1679389313%;
 }
 
-.chart-tooltip.-d20240215 {
-  top: 55.623100304%;
-  right: 1.3740458015%;
+.chart-tooltip.-y1 {
+  top: 61.3981762918%;
+  left: 59.8473282443%;
 }
 
-.chart-tooltip.-d20240215.-bu {
-  top: 0;
+.chart-tooltip.-y2 {
+  top: 29.7872340426%;
+  left: 97.5572519084%;
 }
 
 .chart-tooltip p {
@@ -1729,13 +1745,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 6px;
-  width: 140px;
+  width: 192px;
   height: 128px;
   margin: 0 auto;
-  padding-bottom: 13px;
+  padding-left: 9px;
+  padding-bottom: 15px;
   background: url(../image/chart/tooltip-og.svg) no-repeat center/contain;
+  transform: translateX(-50%);
   transition: 0.5s;
   transform-origin: bottom center;
   transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
@@ -1743,9 +1761,37 @@ body {
 
 .-top .chart-dialog {
   padding-bottom: 0;
-  padding-top: 13px;
+  padding-top: 15px;
   background-image: url(../image/chart/tooltip-og-top.svg);
   transform-origin: top center;
+}
+
+.-left .chart-dialog {
+  transform: translateX(-15%);
+  background-image: url(../image/chart/tooltip-og-left.svg);
+  transform-origin: bottom left;
+}
+
+.-left .chart-dialog:hover {
+  transform: translateX(-15%) scale(1.1);
+}
+
+.-left .chart-dialog:hover + p {
+  transform: translateY(50%);
+}
+
+.-right .chart-dialog {
+  transform: translateX(-80%);
+  background-image: url(../image/chart/tooltip-og-right.svg);
+  transform-origin: bottom right;
+}
+
+.-right .chart-dialog:hover {
+  transform: translateX(-80%) scale(1.1);
+}
+
+.-right .chart-dialog:hover + p {
+  transform: translateY(50%);
 }
 
 .-bu .chart-dialog {
@@ -1755,18 +1801,17 @@ body {
 .chart-dialog > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.3;
   color: #303030;
+  text-align: left;
 }
 
 .chart-dialog span {
-  padding: 0 5px;
-  font-size: 15px;
+  padding: 1px 6px;
   line-height: 1.2;
   color: #FFF;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #EA5404;
 }
 
@@ -1775,7 +1820,7 @@ body {
 }
 
 .chart-dialog:hover {
-  transform: scale(1.1);
+  transform: translateX(-50%) scale(1.1);
 }
 
 .chart-dialog:hover + p {
@@ -1803,15 +1848,19 @@ body {
   transform-origin: bottom center;
 }
 
-.chart-tooltip.-d20220104 {
+.chart-tooltip.-m1 {
   transition-delay: 0.3s;
 }
 
-.chart-tooltip.-d20230306 {
-  transition-delay: 0.8s;
+.chart-tooltip.-m6 {
+  transition-delay: 0.6s;
 }
 
-.chart-tooltip.-d20240215 {
+.chart-tooltip.-y1 {
+  transition-delay: 1.2s;
+}
+
+.chart-tooltip.-y2 {
   transition-delay: 1.9s;
 }
 
@@ -1861,6 +1910,11 @@ body {
     font-size: 16px;
   }
 
+  .chart-x > div > div span::after {
+    bottom: calc(100% + 6px);
+    height: 7px;
+  }
+
   .chart-tooltip p {
     margin-top: 1px;
     font-size: 14px;
@@ -1868,8 +1922,9 @@ body {
 
   .chart-dialog {
     gap: 5px;
-    width: 112px;
+    width: 154px;
     height: 102px;
+    padding-left: 7px;
     padding-bottom: 10px;
   }
 
@@ -1878,12 +1933,11 @@ body {
   }
 
   .chart-dialog > div {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .chart-dialog span {
-    padding: 0 4px;
-    font-size: 13px;
+    padding: 1px 4px;
   }
 
   .chart-legend {
@@ -1893,14 +1947,38 @@ body {
 }
 
 @media only screen and (max-width: 1023px) {
-  .chart-tooltip.-d20240215 {
-    right: 0;
+  .chart-y {
+    width: 50px;
+  }
+
+  .chart-x {
+    padding-left: 50px;
+  }
+
+  .chart-dialog {
+    gap: 4px;
+    width: 140px;
+    height: 93px;
+    padding-left: 5px;
+    padding-bottom: 9px;
+  }
+
+  .-top .chart-dialog {
+    padding-top: 9px;
+  }
+
+  .chart-dialog > div {
+    font-size: 11px;
+  }
+
+  .chart-dialog span {
+    padding: 1px 4px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .chart {
-    max-width: 480px;
+    margin: 0 0 0 -10px;
   }
 
   .chart-main {
@@ -1908,10 +1986,10 @@ body {
   }
 
   .chart-y {
-    gap: 30px;
-    width: 42px;
-    padding-top: 30px;
-    font-size: 12px;
+    gap: 32px;
+    width: 36px;
+    padding-top: 32px;
+    font-size: 9px;
   }
 
   .chart-canvas svg {
@@ -1922,12 +2000,8 @@ body {
     stroke-width: 2px;
   }
 
-  .chart-line {
-    padding-right: 20px;
-  }
-
   .chart-x {
-    padding-left: 42px;
+    padding-left: 36px;
   }
 
   .chart-x::before {
@@ -1936,7 +2010,16 @@ body {
   }
 
   .chart-x > div {
-    font-size: 12px;
+    font-size: 9px;
+  }
+
+  .chart-x > div > div:last-child {
+    width: 2em;
+  }
+
+  .chart-x > div > div span::after {
+    bottom: calc(100% + 4px);
+    height: 5px;
   }
 
   .chart-tooltip p {
@@ -1944,9 +2027,10 @@ body {
   }
 
   .chart-dialog {
-    gap: 4px;
-    width: 86px;
-    height: 78px;
+    gap: 3px;
+    width: 104px;
+    height: 70px;
+    padding-left: 5px;
     padding-bottom: 8px;
   }
 
@@ -1955,12 +2039,7 @@ body {
   }
 
   .chart-dialog > div {
-    font-size: 11px;
-  }
-
-  .chart-dialog span {
-    padding: 0 3px;
-    font-size: 10px;
+    font-size: 8px;
   }
 
   .chart-legend {
