@@ -1624,6 +1624,7 @@ body {
 .chart-main {
   display: flex;
   height: 658px;
+  padding-right: 3%;
 }
 
 .chart-y {
@@ -1663,6 +1664,7 @@ body {
 }
 
 .chart-x {
+  padding-right: 3%;
   padding-left: 70px;
 }
 
@@ -1687,7 +1689,7 @@ body {
 
 .chart-x > div > div:last-child {
   flex: 0 0 auto;
-  width: 3.2em;
+  width: 5%;
 }
 
 .chart-x > div > div span {
@@ -1709,17 +1711,18 @@ body {
 
 .chart-tooltip {
   position: absolute;
+  width: 0;
   text-align: center;
 }
 
 .chart-tooltip.-m1 {
-  top: 4.8632218845%;
+  bottom: 75.9878419453%;
   left: 22.5190839695%;
 }
 
 .chart-tooltip.-m6 {
-  top: 18.8449848024%;
-  left: 38.1679389313%;
+  bottom: 63.0699088146%;
+  left: 38.7786259542%;
 }
 
 .chart-tooltip.-y1 {
@@ -1728,8 +1731,8 @@ body {
 }
 
 .chart-tooltip.-y2 {
-  top: 29.7872340426%;
-  left: 97.5572519084%;
+  bottom: 50.9118541033%;
+  left: 97.4045801527%;
 }
 
 .chart-tooltip p {
@@ -1739,6 +1742,22 @@ body {
   color: #EA5404;
   transition: 0.5s;
   transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.chart-tooltip > img {
+  width: 154px;
+  transform: translateX(-50%);
+  transition: 0.5s;
+  transform-origin: bottom center;
+  transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.chart-tooltip > img:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.chart-tooltip > img:hover + p {
+  transform: translateY(50%);
 }
 
 .chart-dialog {
@@ -1752,7 +1771,7 @@ body {
   margin: 0 auto;
   padding-left: 9px;
   padding-bottom: 15px;
-  background: url(../image/chart/tooltip-og.svg) no-repeat center/contain;
+  background: url(../../image/chart/tooltip-og.svg) no-repeat center/contain;
   transform: translateX(-50%);
   transition: 0.5s;
   transform-origin: bottom center;
@@ -1762,13 +1781,13 @@ body {
 .-top .chart-dialog {
   padding-bottom: 0;
   padding-top: 15px;
-  background-image: url(../image/chart/tooltip-og-top.svg);
+  background-image: url(./../image/chart/tooltip-og-top.svg);
   transform-origin: top center;
 }
 
 .-left .chart-dialog {
   transform: translateX(-15%);
-  background-image: url(../image/chart/tooltip-og-left.svg);
+  background-image: url(./../image/chart/tooltip-og-left.svg);
   transform-origin: bottom left;
 }
 
@@ -1782,7 +1801,7 @@ body {
 
 .-right .chart-dialog {
   transform: translateX(-80%);
-  background-image: url(../image/chart/tooltip-og-right.svg);
+  background-image: url(./../image/chart/tooltip-og-right.svg);
   transform-origin: bottom right;
 }
 
@@ -1795,7 +1814,7 @@ body {
 }
 
 .-bu .chart-dialog {
-  background-image: url(../image/chart/tooltip-bu.svg);
+  background-image: url(./../image/chart/tooltip-bu.svg);
 }
 
 .chart-dialog > div {
@@ -1920,6 +1939,10 @@ body {
     font-size: 14px;
   }
 
+  .chart-tooltip > img {
+    width: 123px;
+  }
+
   .chart-dialog {
     gap: 5px;
     width: 154px;
@@ -1947,12 +1970,21 @@ body {
 }
 
 @media only screen and (max-width: 1023px) {
+  .chart-main {
+    padding-right: 5%;
+  }
+
   .chart-y {
     width: 50px;
   }
 
   .chart-x {
     padding-left: 50px;
+    padding-right: 5%;
+  }
+
+  .chart-tooltip > img {
+    width: 110px;
   }
 
   .chart-dialog {
@@ -1983,13 +2015,14 @@ body {
 
   .chart-main {
     height: 398px;
+    padding-right: 7%;
   }
 
   .chart-y {
-    gap: 32px;
-    width: 36px;
-    padding-top: 32px;
-    font-size: 9px;
+    gap: 33px;
+    width: 30px;
+    padding-top: 33px;
+    font-size: 10px;
   }
 
   .chart-canvas svg {
@@ -2001,7 +2034,8 @@ body {
   }
 
   .chart-x {
-    padding-left: 36px;
+    padding-left: 30px;
+    padding-right: 7%;
   }
 
   .chart-x::before {
@@ -2010,11 +2044,7 @@ body {
   }
 
   .chart-x > div {
-    font-size: 9px;
-  }
-
-  .chart-x > div > div:last-child {
-    width: 2em;
+    font-size: 10px;
   }
 
   .chart-x > div > div span::after {
@@ -2022,8 +2052,21 @@ body {
     height: 5px;
   }
 
+  .chart-tooltip.-m6 img {
+    transform: translateX(-10%);
+    transform-origin: left bottom;
+  }
+
+  .chart-tooltip.-m6 img:hover {
+    transform: translateX(-10%) scale(1.1);
+  }
+
   .chart-tooltip p {
     font-size: 11px;
+  }
+
+  .chart-tooltip > img {
+    width: 96px;
   }
 
   .chart-dialog {
